@@ -27,7 +27,7 @@ QKeySequence ShortcutKeyEditWin::getNewKeySeq()
 	return m_newKeys;
 }
 
-//确认修改，先检查一下。最多四个键
+//纭淇敼锛屽厛妫�鏌ヤ竴涓嬨�傛渶澶氬洓涓敭
 void  ShortcutKeyEditWin::slot_ok()
 {
 	QKeySequence keys = ui.keySequenceEdit->keySequence();
@@ -41,7 +41,7 @@ void  ShortcutKeyEditWin::slot_ok()
 	done(1);
 }
 
-//删除为空
+//鍒犻櫎涓虹┖
 void  ShortcutKeyEditWin::on_delete()
 {
 	done(2);

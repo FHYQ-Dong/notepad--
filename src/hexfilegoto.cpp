@@ -13,7 +13,7 @@ HexFileGoto::~HexFileGoto()
 {
 }
 
-//��ʾΪ
+//显示为
 void HexFileGoto::slot_showDecInfo(const QString &text)
 {
 	bool ok;

@@ -7,8 +7,17 @@ set(CMAKE_AUTORCC ON)
 
 find_package(Qt5 REQUIRED COMPONENTS Core Gui Widgets Concurrent Network PrintSupport XmlPatterns)
 
+# 解决文件编码问题 - MSVC 强制使用 UTF-8 编码
+if(MSVC) 
+    add_compile_options(/utf-8)
+endif()
+
 # qscint 关键依赖库
 add_subdirectory(${PROJECT_SOURCE_DIR}/src/qscint)
+set_target_properties(qscint PROPERTIES
+    OUTPUT_NAME "qmyedit_qt5"   # 强制输出为 qmyedit_qt5.lib
+    DEBUG_POSTFIX "d"           # Debug 模式自动加 d (qmyedit_qt5d.lib)
+)
 
 # 插件库包含
 # helloworld 动态插件库

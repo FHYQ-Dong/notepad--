@@ -5,7 +5,7 @@
 #include <QMenu>
 
 
-//µ±ÏÔÊ¾ÎÄ¼þ¶àÁËÒÔºó£¬°ÑËùÓÐÎÄ¼þÁÐÔÚ¸ÃÁÐ±íÖÐ
+//å½“æ˜¾ç¤ºæ–‡ä»¶å¤šäº†ä»¥åŽï¼ŒæŠŠæ‰€æœ‰æ–‡ä»¶åˆ—åœ¨è¯¥åˆ—è¡¨ä¸­
 
 FileListView::FileListView(QWidget *parent)
 	: QWidget(parent), m_pNotepad(nullptr)
@@ -14,7 +14,7 @@ FileListView::FileListView(QWidget *parent)
 
 	connect(ui.filelistWidget, &QListWidget::itemDoubleClicked, this, &FileListView::itemDoubleClicked);
 
-	setContextMenuPolicy(Qt::CustomContextMenu);  //ÉèÖÃÃ¶¾ÙÖµ
+	setContextMenuPolicy(Qt::CustomContextMenu);  //è®¾ç½®æžšä¸¾å€¼
 
 	connect(this, &QListWidget::customContextMenuRequested, this, &FileListView::slot_ShowPopMenu);
 }
@@ -29,7 +29,7 @@ void FileListView::setNotepadWin(QWidget* pNotepad)
 	m_pNotepad = pNotepad;
 }
 
-//ÓÒ¼ü²Ëµ¥
+//å³é”®èœå•
 void FileListView::slot_ShowPopMenu(const QPoint& pos)
 {
 	QListWidgetItem* curItem = ui.filelistWidget->itemAt(pos);
@@ -53,11 +53,11 @@ void FileListView::slot_ShowPopMenu(const QPoint& pos)
 				{
 					pNotePad->closeFileByEditWidget(m_fileEditMap.value(curItem->text()).pEditWidget);
 				}
-				//×¢ÒâÕâÀï²»ÐèÒªÔÚÉ¾³ým_fileEditMapÔªËØ£¬ÒòÎªcloseFileByEditWidgetÀïÃæ»áµ÷ÓÃ¡£
+				//æ³¨æ„è¿™é‡Œä¸éœ€è¦åœ¨åˆ é™¤m_fileEditMapå…ƒç´ ï¼Œå› ä¸ºcloseFileByEditWidgeté‡Œé¢ä¼šè°ƒç”¨ã€‚
 			}
 		});
 
-		//Ã»ÓÐÃû³Æ±íÊ¾ÊÇ¶ÔÆëµÄitem£¬²»´æÔÚ¶ÔÓ¦µÄÎÄ¼þ£¬Ö»ÊÇÕ¼Î»
+		//æ²¡æœ‰åç§°è¡¨ç¤ºæ˜¯å¯¹é½çš„itemï¼Œä¸å­˜åœ¨å¯¹åº”çš„æ–‡ä»¶ï¼Œåªæ˜¯å ä½
 		if (curItem->text().isEmpty())
 		{
 			actionAdd->setEnabled(false);

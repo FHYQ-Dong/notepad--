@@ -26,8 +26,8 @@ enum LangType {
 #endif
 
 struct LexerInfo{
-	LangType lexerId; //Èç¹ûÊÇL_USER_DEFINE£¬Ôò±íÊ¾Ä¸°æµÄÀàĞÍ
-	QString tagName; //ÓïÑÔtagÃû³Æ¡£
+	LangType lexerId; //å¦‚æœæ˜¯L_USER_DEFINEï¼Œåˆ™è¡¨ç¤ºæ¯ç‰ˆçš„ç±»å‹
+	QString tagName; //è¯­è¨€tagåç§°ã€‚
 	bool isUserDefineLangs()
 	{
 		return (lexerId > L_USER_DEFINE);
@@ -55,10 +55,10 @@ public:
 
 	bool getLexerTypeByExt(QString ext, LexerInfo& lexer);
 
-	//ÁĞ³ötagÓïÑÔÏÂÃæµÄËùÓĞ¹ØÁªµÄÎÄ¼şºó×ºÁĞ±í
+	//åˆ—å‡ºtagè¯­è¨€ä¸‹é¢çš„æ‰€æœ‰å…³è”çš„æ–‡ä»¶åç¼€åˆ—è¡¨
 	void getExtlistByLangTag(QString tag, QStringList& extList);
 
-	//ÁĞ³öËùÓĞÓïÑÔÏÂÃæµÄËùÓĞ¹ØÁªµÄÎÄ¼şºó×ºÁĞ±í
+	//åˆ—å‡ºæ‰€æœ‰è¯­è¨€ä¸‹é¢çš„æ‰€æœ‰å…³è”çš„æ–‡ä»¶åç¼€åˆ—è¡¨
 	void getExtlistByLangTag(QMap<QString, QStringList>& extLangMap);
 
 
